@@ -17,7 +17,7 @@ import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
  * @Author yangyue
  * @Date Created in 下午1:34 2019/2/20
  * @Modified by:
- * @Description:
+ * @Description: 输出文件使用SequenceFile的形式
  **/
 
 public class UserLoginTopN {

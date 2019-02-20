@@ -18,7 +18,7 @@ import org.apache.hadoop.mapreduce.lib.partition.TotalOrderPartitioner;
  * @Author yangyue
  * @Date Created in 下午1:35 2019/2/20
  * @Modified by:
- * @Description:
+ * @Description: 抽样分析
  **/
 
 

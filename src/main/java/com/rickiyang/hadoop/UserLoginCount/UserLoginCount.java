@@ -17,7 +17,7 @@ import java.io.IOException;
  * @Author yangyue
  * @Date Created in 下午1:33 2019/2/20
  * @Modified by:
- * @Description:
+ * @Description: 统计用户访问次数
  **/
 
 
@@ -45,7 +45,7 @@ public class UserLoginCount {
                               Reducer<Text, IntWritable, Text, IntWritable>.Context context) throws IOException, InterruptedException {
             int sum = 0;
             for (IntWritable value : values) {
-                sum += 1;
+                sum += value.get();
             }
             outputKey.set(sum);
             context.write(key, outputKey);
@@ -65,8 +65,8 @@ public class UserLoginCount {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
-        FileInputFormat.addInputPath(job, new Path("file:///J:\\bd32\\onclass\\hadoop\\user-logs-large.txt"));
-        Path outputPath = new Path("/bd32/unamecount1");
+        FileInputFormat.addInputPath(job, new Path("file:///Users/rickiyang/workspace/bigDataDemo/file/user-logs-large.txt"));
+        Path outputPath = new Path("/Users/rickiyang/workspace/bigDataDemo/output");
         outputPath.getFileSystem(conf).delete(outputPath, true);
         FileOutputFormat.setOutputPath(job, outputPath);
 
