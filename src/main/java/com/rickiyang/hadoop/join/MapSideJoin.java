@@ -33,8 +33,7 @@ public class MapSideJoin {
 
         //加载小表的数据，把关联字段作为key放入littleTableContent中
         @Override
-        protected void setup(Mapper<LongWritable, Text, Text, Text>.Context context)
-                throws IOException, InterruptedException {
+        protected void setup(Mapper<LongWritable, Text, Text, Text>.Context context) throws IOException {
             littleTableContent = new HashMap<>();
             //获取分布式缓存文件的路径
             URI[] uris = context.getCacheFiles();
@@ -79,6 +78,8 @@ public class MapSideJoin {
         Path littleFilePath = new Path("/bd32/joinTest/student.csv");
         URI littleFileURI = littleFilePath.toUri();
         job.setCacheFiles(new URI[]{littleFileURI});
+        //job.addCacheFile(new URI("file:/D:/srcdata/mapjoincache/pdts.txt"));
+        //job.addCacheFile(new URI("hdfs://centos-aaron-h1:9000/rjoin/mapjoincache/product.txt"));
 
         //设置输入输出
         FileInputFormat.addInputPath(job, new Path("/bd32/joinTest/studentscore1.csv"));
