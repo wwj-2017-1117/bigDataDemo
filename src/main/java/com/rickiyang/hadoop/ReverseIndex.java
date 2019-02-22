@@ -113,8 +113,8 @@ public class ReverseIndex {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
-        FileInputFormat.addInputPath(job, new Path("/bd32/reindexfiles"));
-        Path outputDir = new Path("/bd32/reindexoutput");
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/reindexfiles"));
+        Path outputDir = new Path("/rickiyang/reindexoutput");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
         job.setInputFormatClass(ReverseIndexInputFormat.class);

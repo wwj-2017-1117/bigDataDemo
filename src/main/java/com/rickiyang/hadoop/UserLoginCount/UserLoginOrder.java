@@ -28,7 +28,7 @@ public class UserLoginOrder {
         //1、定义输入抽样
         RandomSampler<IntWritable, Text> sampler = new RandomSampler<IntWritable, Text>(0.8, 5);
         //2.设置分区文件位置
-        Path partitonerFile = new Path("/bd32/cyxorder");
+        Path partitonerFile = new Path("/rickiyang/cyxorder");
         TotalOrderPartitioner.setPartitionFile(conf, partitonerFile);
 
         Job job = Job.getInstance(conf);
@@ -46,8 +46,8 @@ public class UserLoginOrder {
 
         job.setInputFormatClass(SequenceFileInputFormat.class);
 
-        FileInputFormat.addInputPath(job, new Path("/bd32/cyxgrouptop1/part-r-00000"));
-        Path outputDir = new Path("/bd32/cyxgrouptop2");
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/cyxgrouptop1/part-r-00000"));
+        Path outputDir = new Path("/rickiyang/cyxgrouptop2");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
         InputSampler.writePartitionFile(job, sampler);

@@ -142,7 +142,7 @@ public class ReadFromMysql {
         //DBInputFormat.setInput(job, inputClass, tableName, conditions, orderBy, fieldNames);
         DBInputFormat.setInput(job, EmpWritable.class, "select * from t_emp", "select count(1) from t_emp");
 
-        Path outputDir = new Path("/bd32/readfrommysql");
+        Path outputDir = new Path("/rickiyang/readfrommysql");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
 

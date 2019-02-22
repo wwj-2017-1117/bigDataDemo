@@ -73,13 +73,13 @@ public class BloomFilterReduce {
         job.setOutputValueClass(Text.class);
 
         //把小表的路径设置为分布式缓存文件
-        Path littleFilePath = new Path("/bd32/joinTest/aa.txt");
+        Path littleFilePath = new Path("/rickiyang/joinTest/aa.txt");
         URI littleFileURI = littleFilePath.toUri();
         job.setCacheFiles(new URI[]{littleFileURI});
 
         //设置输入输出
-        FileInputFormat.addInputPath(job, new Path("/bd32/joinTest/bb.txt"));
-        Path outputDir = new Path("/bd32/mapjoinoutput");
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/joinTest/bb.txt"));
+        Path outputDir = new Path("/rickiyang/mapjoinoutput");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
 

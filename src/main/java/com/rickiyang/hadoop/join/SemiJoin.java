@@ -213,7 +213,7 @@ public class SemiJoin extends Configured implements Tool {
         job.setMapperClass(SemiJoinMapper.class);
 
         //把小表的路径设置为分布式缓存文件
-        Path littleFilePath = new Path("/bd32/joinTest/tb_dim_city.csv");
+        Path littleFilePath = new Path("/rickiyang/joinTest/tb_dim_city.csv");
         URI littleFileURI = littleFilePath.toUri();
         job.setCacheFiles(new URI[]{littleFileURI});
 

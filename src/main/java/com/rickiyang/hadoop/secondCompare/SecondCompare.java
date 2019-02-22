@@ -153,8 +153,8 @@ public class SecondCompare {
 
         job.setGroupingComparatorClass(GroupingComparator.class);
 
-        FileInputFormat.addInputPath(job, new Path("/bd32/sesort.txt"));
-        Path outputDir = new Path("/bd32/sesortoutput");
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/sesort.txt"));
+        Path outputDir = new Path("/rickiyang/sesortoutput");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
 

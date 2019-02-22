@@ -67,8 +67,8 @@ public class UserLoginTopN {
 
         job.setOutputFormatClass(SequenceFileOutputFormat.class);
 
-        FileInputFormat.addInputPath(job, new Path("/bd32/user-logs-large.txt"));
-        FileOutputFormat.setOutputPath(job, new Path("/bd32/cyxgrouptop1"));
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/user-logs-large.txt"));
+        FileOutputFormat.setOutputPath(job, new Path("/rickiyang/cyxgrouptop1"));
 
         System.exit(job.waitForCompletion(true)?0:1);
 

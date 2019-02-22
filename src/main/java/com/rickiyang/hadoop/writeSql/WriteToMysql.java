@@ -114,7 +114,7 @@ public class WriteToMysql {
 
         job.setOutputFormatClass(DBOutputFormat.class);
         DBOutputFormat.setOutput(job, "order_count", "order_id", "product_num");
-        FileInputFormat.addInputPath(job, new Path("/bd32/orderdata/order_items"));
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/orderdata/order_items"));
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
 

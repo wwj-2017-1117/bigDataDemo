@@ -93,8 +93,8 @@ public class ChainTest {
         ChainReducer.addMapper(job, ChainTestMap3.class, Text.class, IntWritable.class, Text.class, IntWritable.class, conf);
 
         //设置输入输出文件
-        FileInputFormat.addInputPath(job, new Path("/bd32/productsales.txt"));
-        Path outputDir = new Path("/bd32/chaintestoutput");
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/productsales.txt"));
+        Path outputDir = new Path("/rickiyang/chaintestoutput");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
 

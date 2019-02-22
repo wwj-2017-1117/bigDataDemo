@@ -75,15 +75,15 @@ public class MapSideJoin {
         job.setOutputValueClass(Text.class);
 
         //把小表的路径设置为分布式缓存文件
-        Path littleFilePath = new Path("/bd32/joinTest/student.csv");
+        Path littleFilePath = new Path("/rickiyang/joinTest/student.csv");
         URI littleFileURI = littleFilePath.toUri();
         job.setCacheFiles(new URI[]{littleFileURI});
         //job.addCacheFile(new URI("file:/D:/srcdata/mapjoincache/pdts.txt"));
         //job.addCacheFile(new URI("hdfs://centos-aaron-h1:9000/rjoin/mapjoincache/product.txt"));
 
         //设置输入输出
-        FileInputFormat.addInputPath(job, new Path("/bd32/joinTest/studentscore1.csv"));
-        Path outputDir = new Path("/bd32/mapjoinoutput");
+        FileInputFormat.addInputPath(job, new Path("/rickiyang/joinTest/studentscore1.csv"));
+        Path outputDir = new Path("/rickiyang/mapjoinoutput");
         outputDir.getFileSystem(conf).delete(outputDir, true);
         FileOutputFormat.setOutputPath(job, outputDir);
 
